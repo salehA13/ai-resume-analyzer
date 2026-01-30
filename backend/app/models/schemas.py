@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Optional
+
 from pydantic import BaseModel, Field
 
 
@@ -69,7 +71,7 @@ class AnalysisResult(BaseModel):
     skill_matches: list[SkillMatch] = []
     suggestions: list[Suggestion] = []
     strengths: list[str] = []
-    job_match_score: int | None = Field(None, ge=0, le=100)
+    job_match_score: Optional[int] = Field(None, ge=0, le=100)
     job_title_match: str = ""
 
 
